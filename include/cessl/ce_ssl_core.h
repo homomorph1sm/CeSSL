@@ -39,7 +39,7 @@ typedef ce_ssl_errno_t (*CeSSLCryptoHandlerHandlerMethod)(CeSSLCryptoHandlerPoin
  * @calls
  * @input       /
  * @output      /
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @TODO
  * @calledBy:
  *              @see int main(void)
@@ -53,7 +53,7 @@ ce_ssl_errno_t ce_ssl_crypto_core_init();
  * @calls
  * @input       [char *] filePath 文件路径
  * @output      /
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @TODO
  * @calledBy:
  */
@@ -77,7 +77,7 @@ CeSSLCryptoHandlerPointer ce_ssl_crypto_get_handler(CeSSLCryptoTypes cryptoTypes
  * @calls
  * @input       [char *] name  算法名
  * @output      /
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @TODO
  * @calledBy:
  */
@@ -90,7 +90,7 @@ CeSSLCryptoHandlerPointer ce_ssl_crypto_get_handler_by_name(char * name);
  * @calls
  * @input       [CeSSLCryptoTypes] cryptoTypes  算法编号
  * @output      /
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @TODO
  * @calledBy:
  */
@@ -103,7 +103,7 @@ ce_ssl_errno_t ce_ssl_crypto_core_disable_handler(CeSSLCryptoTypes cryptoTypes);
  * @calls
  * @input       [char *] name  算法名
  * @output      /
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @TODO
  * @calledBy:
  */
@@ -116,7 +116,7 @@ ce_ssl_errno_t ce_ssl_crypto_core_disable_handler_by_name(char * name);
  * @calls
  * @input       [CeSSLCryptoTypes] cryptoTypes 算法编号
  * @output      /
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @TODO
  * @calledBy:
  */
@@ -129,7 +129,7 @@ ce_ssl_errno_t ce_ssl_crypto_core_enable_handler(CeSSLCryptoTypes cryptoTypes);
  * @calls
  * @input       [char *] name  算法名
  * @output      /
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @TODO
  * @calledBy:
  */
@@ -146,7 +146,7 @@ ce_ssl_errno_t ce_ssl_crypto_core_enable_handler_by_name(char * name);
  *              [CeSSLCryptoHandlerHandlerMethod]        method      承载方法
  *              [bool]                                  saveForever 是否永久保存
  * @output      /
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @TODO
  * @calledBy:
  */
@@ -167,7 +167,7 @@ ce_ssl_errno_t ce_ssl_crypto_add_handler(CeSSLCryptoTypes cryptoTypes,
  *              [saveForever]                           method      承载方法
  *              [bool]                                  saveForever 是否永久保存
  * @output      /
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @TODO
  * @calledBy:
  */
@@ -185,7 +185,7 @@ ce_ssl_errno_t ce_ssl_crypto_add_static_handler(CeSSLCryptoTypes cryptoTypes,
  *              [CeSSLContextHandlerPointer]             context     上下文句柄
  *              [CeSSLCryptoResultHandlerPointer *]      result      算法结果
  * @output      /
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @TODO
  * @calledBy:
  */
@@ -453,7 +453,7 @@ void ce_ssl_result_handler_destructor(CeSSLCryptoResultHandlerPointer ptr);
  * @input       [CeSSLCryptoResultHandlerPointer] ptr             提取数据的指针
  * @output      [void *]                         buff            用户态缓存区
  *              [int *]                          bufLen          写入buff的长度
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @DEV
  * @calledBy:
  */
@@ -470,7 +470,7 @@ ce_ssl_errno_t ce_ssl_result_handler_get_result(CeSSLCryptoResultHandlerPointer 
  *              [int *]                          bufLen       写入buff的长度
  *              [int]                            start        起始位置角标
  *              [int]                            sum          读取数量
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @DEV
  * @calledBy:
  */
@@ -485,7 +485,7 @@ ce_ssl_errno_t ce_ssl_result_handler_get_results(CeSSLCryptoResultHandlerPointer
  * @output      [void *]                         buff         用户态缓存区
  *              [int *]                          bufLen       写入buff的长度
  *              [int]                            pos          读取单个位置角标
- * @return      [ce_ssl_errno_t] AC_AU_SUCCESS for success, other values for fail
+ * @return      [ce_ssl_errno_t] CE_SSL_SUCCESS for success, other values for fail
  * @status      @DEV
  * @calledBy:
  */
@@ -518,8 +518,8 @@ ce_ssl_errno_t ce_sslcrypto_core_set_5g_fn_hashmethod(CeSSLTuakFnHash hashmethod
  * @description         设置5g_fn中的TOP字段，深拷贝
  * @param top           TOP字段参数
  */
-void ce_sslcrypto_core_set_5g_fn_top(uint8 *top);
-#ifdef AC_AU_DEBUG_MODE
+void ce_ssl_crypto_core_set_5g_fn_top(uint8 *top);
+#ifdef CE_SSL_DEBUG_MODE
 void ce_ssl_crypto_handler_print(CeSSLCryptoHandlerPointer pointer);
 #endif
 
