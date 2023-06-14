@@ -354,4 +354,48 @@ typedef enum CeSSLKeyPairType{
     SM2,
 }CeSSLKeyPairType;
 
+
+#define TUAK_KEY_16   16
+#define TUAK_KEY_32   32
+#define TUAK_RES_4     4
+#define TUAK_RES_8     8
+#define TUAK_RES_16   16
+#define TUAK_RES_32   32
+#define TUAK_CK_16    16
+#define TUAK_CK_32    32
+#define TUAK_IK_16    16
+#define TUAK_IK_32    32
+#define TUAK_MAC_8     8
+#define TUAK_MAC_16   16
+#define TUAK_MAC_32   32
+
+#define TUAK_TOP_SZ   32
+#define TUAK_TOPC_SZ  32
+#define TUAK_RAND_SZ  16
+#define TUAK_AMF_SZ    2
+#define TUAK_SQN_SZ    6
+#define TUAK_AK_SZ     6
+
+/***
+ * @author: 李泽健
+ * @name: enum CeSSLTuakFnType
+ * @alias:
+ *      @see CeSSLTuakFnType
+ * @description: 5GFn系列函数枚举类型
+ */
+typedef enum CeSSLTuakFnType{
+    TuakRes = 0,
+    TuakCk = 1,
+    TuakIk = 2,
+    TuakAk = 3,
+    TuakMac,
+    TuakKey
+}CeSSLTuakFnType;
+
+typedef enum CeSSLTuakFnHash{
+    TuakHashByKeccak,
+    TuakHashBySm3
+}CeSSLTuakFnHash;
+
+
 #endif //CESSL_CE_SSL_DEFINES_H

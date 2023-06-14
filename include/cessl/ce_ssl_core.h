@@ -491,6 +491,34 @@ ce_ssl_errno_t ce_ssl_result_handler_get_results(CeSSLCryptoResultHandlerPointer
  */
 ce_ssl_errno_t ce_ssl_result_handler_get_specific_result(CeSSLCryptoResultHandlerPointer ptr, int pos, void * buf, int * bufLen);
 
+/**
+ * @author          李泽健
+ * @name            ce_sslcrypto_core_set_5g_fn_sz
+ * @description     设置5g_fn中相关字段的大小
+ * @param keyType   字段类型
+ * @param value     字段大小，使用宏定义赋值
+ * @param ...       @TODO 使用可变参数实现同时设置多个字段大小
+ * @return
+ */
+ce_ssl_errno_t ce_sslcrypto_core_set_5g_fn_sz(CeSSLTuakFnType keyType, uint8 value, ...);
+
+/**
+ * @author                  李泽健
+ * @name                    ce_sslcrypto_core_set_5g_fn_hashmethod
+ * @description             设置5g_fn使用的哈希方法及轮数
+ * @param hashmethod        5g_fn中使用的哈希方法名称，枚举类型
+ * @param hashRounds        哈希轮数，默认1次
+ * @return
+ */
+ce_ssl_errno_t ce_sslcrypto_core_set_5g_fn_hashmethod(CeSSLTuakFnHash hashmethod,int hashRounds);
+
+/**
+ * @author              李泽健
+ * @name                ce_sslcrypto_core_set_5g_fn_top
+ * @description         设置5g_fn中的TOP字段，深拷贝
+ * @param top           TOP字段参数
+ */
+void ce_sslcrypto_core_set_5g_fn_top(uint8 *top);
 #ifdef AC_AU_DEBUG_MODE
 void ce_ssl_crypto_handler_print(CeSSLCryptoHandlerPointer pointer);
 #endif
