@@ -353,6 +353,29 @@ typedef enum CeSSLKeyPairType{
     RSA = 0,
     SM2,
 }CeSSLKeyPairType;
+/***
+* @author: 李晟
+* @name: struct CeSSLKeyHandler
+* @alias:
+* @see CeSSLKeyHandler
+* @see CeSSLKeyHandlerPointer
+* @param version 当前的版本号 @see CE_SSL_VERSION_KEY_HANDLER_* 宏
+* @param key 存放密钥的地址指针，并不一定是密钥本身，具体使用方式需要 @see CeSSLKeyType
+* @param keyLen key的长度
+* @param type key类型的定义
+* @param memoryType 可以预估的内存类型，默认get的handler为@see StackMemory, 否则应该为@see HeapMemory
+* @param iv 部分函数可以自定义IV
+* @param ivLen 自定义IV的长度
+*/
+struct CeSSLKeyHandler {
+    int version;
+    unsigned char * key;
+    char * iv;
+    int ivLen;
+    int keyLen;
+    CeSSLKeyType type;
+    CeSSLCryptoMemoryType memoryType;
+};
 
 
 #define TUAK_KEY_16   16
