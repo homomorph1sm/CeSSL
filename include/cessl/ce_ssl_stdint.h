@@ -1,7 +1,3 @@
-//
-// Created by 83672 on 2023/6/14.
-//
-
 #ifndef CESSL_CE_SSL_STDINT_H
 #define CESSL_CE_SSL_STDINT_H
 #include <stdint.h>
